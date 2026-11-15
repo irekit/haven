@@ -7,6 +7,10 @@ public class parryject : MonoBehaviour
     {
         if (col.CompareTag("Respawn"))
         {
+            if(col.GetComponent<boss>() != null)
+            {
+                col.GetComponent<boss>().Parried();
+            }
             play.Parry();
             GetComponent<CircleCollider2D>().enabled = false;
         }
